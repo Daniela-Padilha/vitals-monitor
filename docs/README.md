@@ -4,7 +4,7 @@ A portable vital signs monitor simulator in C.
 
 Clean HAL design. Realistic sensor simulation. Signal processing. CSV logging. ANSI dashboard.
 
-======================================================================
+<br>
 
 ## Status
 
@@ -13,7 +13,7 @@ peak detection, anomaly detection, logger.
 
 In progress: display, CLI parsing, scenario injection, signal handling, hal_design doc.
 
-======================================================================
+<br>
 
 ## Overview
 
@@ -28,7 +28,7 @@ This means the simulation is only the data source. The rest of the system is des
 
 simulate -> acquire -> filter -> detect -> log -> display
 
-======================================================================
+<br>
 
 ## Why this project exists
 
@@ -44,7 +44,7 @@ The goal of vitals-monitor is not just to generate numbers. It is to practice an
 
 It is a software-first project, but its architecture is intended to be realistic and portable.
 
-======================================================================
+<br>
 
 ## Goals
 
@@ -58,7 +58,7 @@ This project aims to:
 - log readings in a standard machine-readable format
 - document the architecture as if another engineer had to plug in real hardware tomorrow
 
-======================================================================
+<br>
 
 ## Features
 
@@ -91,7 +91,7 @@ Design features:
 - Configurable simulation parameters
 - Clear separation between acquisition, filtering, anomaly detection, logging, display, and scenario injection
 
-======================================================================
+<br>
 
 ## Concepts
 
@@ -125,7 +125,7 @@ In medical and embedded contexts, timestamp ambiguity is a safety issue. A forma
 
 For this reason, vitals-monitor writes timestamps in UTC ISO 8601 format in its CSV logs.
 
-======================================================================
+<br>
 
 ## Project Structure
 
@@ -142,7 +142,7 @@ Important documentation files:
 - docs/hal_design.md
   Explains the HAL architecture, design decisions, and how a real hardware backend could replace the simulator.
 
-======================================================================
+<br>
 
 ## Build Instructions
 
@@ -173,7 +173,7 @@ Rebuild from scratch:
 
 make re
 
-======================================================================
+<br>
 
 ## Run Instructions
 
@@ -215,7 +215,7 @@ Combine options:
 
 ./vitals-monitor --log logs/run.csv --interval 500 --window 5 --scenario scenarios/example.scn
 
-======================================================================
+<br>
 
 ## Scenario Files
 
@@ -241,7 +241,7 @@ Typical use cases:
 - validating the CSV output
 - making evaluation runs reproducible
 
-======================================================================
+<br>
 
 ## Signals
 
@@ -265,7 +265,7 @@ To find the program PID, you can use:
 
 ps aux | grep vitals-monitor
 
-======================================================================
+<br>
 
 ## Logging
 
@@ -289,7 +289,7 @@ The logging format is intentionally simple so the output can be used easily with
 - Python notebooks
 - plotting tools like gnuplot
 
-======================================================================
+<br>
 
 ## Resources
 
@@ -326,7 +326,7 @@ Project-specific documents:
 
 These notes document the register maps, sensor behaviour, and design decisions used in the simulator and HAL.
 
-======================================================================
+<br>
 
 ## Notes
 
@@ -338,7 +338,7 @@ That makes vitals-monitor useful not only as a C project, but also as a demonstr
 - robustness under failure
 - reproducible system testing
 
-======================================================================
+<br>
 
 ## Author
 
