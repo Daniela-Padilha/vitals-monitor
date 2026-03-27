@@ -1,4 +1,12 @@
-# vitals-monitor
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)"  srcset="https://github.com/user-attachments/assets/cf726d6b-e1c0-4a23-8491-6ad8d6dc38e4">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/c0f988b1-9b0d-43eb-912f-2afad43a8ea5">
+    <img src="URL-DO-LOGO-LIGHT" width="280"/>
+  </picture>
+</p>
+
+# Vitals-monitor
 
 A portable vital signs monitor simulator in C.
 
