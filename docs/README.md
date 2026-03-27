@@ -129,7 +129,7 @@ For this reason, vitals-monitor writes timestamps in UTC ISO 8601 format in its 
 
 ## Project Structure
 
-![project structure](image.png)
+<img width="321" height="615" alt="Captura de ecrã 2026-03-27 200500" src="https://github.com/user-attachments/assets/d2c398a9-9d53-47c2-b993-cc09e33b9b56" />
 
 Important documentation files:
 
@@ -299,7 +299,7 @@ Datasheets and hardware references:
   https://datasheets.maximintegrated.com/en/ds/MAX30102.pdf
 
 - SHT31 Datasheet:
-  https://sensirion.com/resource/datasheet/sht3x
+  https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf
 
 - I2C Protocol Primer:
   https://www.i2c-bus.org/
@@ -313,10 +313,7 @@ Signal and embedded-system references:
   https://en.wikipedia.org/wiki/ANSI_escape_code
 
 - A Practical Introduction to HALs:
-  https://interrupt.memfault.com/blog/hardware-abstraction-layer
-
-- WiringPi:
-  http://wiringpi.com/
+  https://www.lenovo.com/us/en/glossary/hardware-abstraction-layer/?orgRef=https%253A%252F%252Fwww.google.com%252F&srsltid=AfmBOopY1egP2Km1laStBbq0nzPdnBktZY6rVWHnX5JQ6Xv79QzbLibx
 
 Project-specific documents:
 
