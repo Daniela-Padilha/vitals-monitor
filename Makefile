@@ -28,7 +28,7 @@ BCYA	= "\033[36;1m"
 BWHI	= "\033[37;1m"
 RES		= "\033[0m"
 
-SRC = $(addprefix $(SRC_DIR)/, sim_backend.c filter.c anomaly.c logger.c)
+SRC = $(addprefix $(SRC_DIR)/, main.c sim_backend.c filter.c anomaly.c logger.c display.c)
 TEST = $(addprefix $(TEST_DIR)/, main.c test_filter.c test_anomaly.c test_peak_detect.c test_logger.c test_hal.c)
 TEST_BIN = $(TEST_DIR)/test
 
