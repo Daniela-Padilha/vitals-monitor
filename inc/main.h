@@ -1,15 +1,17 @@
 #ifndef MAIN_H
 # define MAIN_H
 
+# define INTERVAL_MS 500
+
+# include <unistd.h>
+# include <signal.h>
+# include <time.h>
+# include <stdint.h>
 # include "../inc/sim_backend.h"
 # include "../inc/filter.h"
 # include "../inc/anomaly.h"
 # include "../inc/logger.h"
 # include "../inc/display.h"
-# include <signal.h>
-# include <sys/types.h>
-
-# define INTERVAL_MS 500
 
 static volatile sig_atomic_t	g_connected = 1;
 static volatile sig_atomic_t    g_running = 1;

@@ -37,18 +37,18 @@ static char *anomaly_to_string(t_anomaly_type type)
 void display_update(t_display_data *data)
 {
 	printf(TOP_LEFT);
-	printf("╔══════════════════════════════════╗\n");
-	printf("║     " BOLD "Vitals-monitor" RES "          ║\n");
-	printf("╠══════════════════════════════════╣\n");
-	printf("║  Heart Rate: %-19.1f BPM ║\n", data->bpm);
-	printf("║  SpO2:       %-19.1f %%  ║\n", data->max_pair.second.value);
-	printf("║  Temperature:%-19.1f °C  ║\n", data->sht_pair.first.value);
-	printf("║  Humidity:   %-19.1f %%  ║\n", data->sht_pair.second.value);
-	printf("╠══════════════════════════════════╣\n");
+	printf("╔═══════════════════════════════════╗\n");
+	printf("║           " BOLD "Vitals-monitor" RES "          ║\n");
+	printf("╠═══════════════════════════════════╣\n");
+	printf("║  Heart Rate:  %-15.1f BPM ║\n", data->bpm);
+	printf("║  SpO2:        %-16.1f %%  ║\n", data->max_pair.second.value);
+	printf("║  Temperature: %-15.1f °C  ║\n", data->sht_pair.first.value);
+	printf("║  Humidity:    %-16.1f %%  ║\n", data->sht_pair.second.value);
+	printf("╠═══════════════════════════════════╣\n");
 	if (data->state.curr == ANOMALY_NONE)
-    	printf("║  Status: " GRN "%-20s" RES "║\n", "OK");
+    	printf("║            Status: " GRN "%s" RES "             ║\n", "OK");
 	else
-    	printf("║  Status: " RED "%-20s" RES "║\n", anomaly_to_string(data->state.curr));
-	printf("╚══════════════════════════════════╝\n");
+    	printf("║            Status: " RED "%s" RES "             ║\n", anomaly_to_string(data->state.curr));
+	printf("╚═══════════════════════════════════╝\n");
 	fflush(stdout);
 }

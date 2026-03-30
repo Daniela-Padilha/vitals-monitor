@@ -1,5 +1,5 @@
 
-NAME = ft_vitals
+NAME = vitals-monitor
 CC = gcc
 C_FLAGS = -Wall -Wextra -Werror
 LDF_FLAGS=-lm
@@ -31,10 +31,12 @@ RES		= "\033[0m"
 SRC = $(addprefix $(SRC_DIR)/, main.c sim_backend.c filter.c anomaly.c logger.c display.c)
 TEST = $(addprefix $(TEST_DIR)/, main.c test_filter.c test_anomaly.c test_peak_detect.c test_logger.c test_hal.c)
 TEST_BIN = $(TEST_DIR)/test
+LOGS = log.csv
 
 all: $(NAME)
 
 $(NAME): $(SRC)
+	@touch $(LOGS)
 	@$(CC) $(C_FLAGS) -I$(INC_DIR) $(SRC) -o $@ $(LDF_FLAGS)
 	@echo $(BGRN)"✨ Compilation completed ✨"$(RES)
 
@@ -56,7 +58,7 @@ clean:
 	@echo $(BMAG)"✨ Nothing to clean (no object files) ✨"$(RES)
 
 fclean:
-	@rm -f $(NAME) $(TEST_BIN)
+	@rm -f $(NAME) $(TEST_BIN) $(LOGS)
 	@echo $(BMAG)"✨ Program removed" $(BGRN)"successfully ✨"$(RES)
 
 re: fclean all

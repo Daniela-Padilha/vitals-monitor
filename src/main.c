@@ -18,7 +18,7 @@ static int init_all(t_app *app)
         return (-1);
     if (filter_init(&app->filter, 5) == -1)
         return (-1);
-    if (detector_init(&app->detector, 0.2) == -1)
+    if (detector_init(&app->detector, 0.1) == -1)
         return (-1);
     if (logger_init(&app->logger, "log.csv") == -1)
         return (-1);
@@ -32,6 +32,7 @@ static int init_all(t_app *app)
 static void run_loop(t_app *app)
 {
 	struct timespec	ts;
+	struct timespec	sleep_ts;
 	int64_t			before_ms;
 	int64_t			after_ms;
 	int64_t			elapsed_ms;
@@ -65,7 +66,11 @@ static void run_loop(t_app *app)
 		elapsed_ms = after_ms - before_ms;
 		remaining = INTERVAL_MS - elapsed_ms;
 		if (remaining > 0)
-    		usleep((useconds_t)(remaining * 1000));
+		{
+    		sleep_ts.tv_sec = remaining / 1000;
+    		sleep_ts.tv_nsec = (remaining % 1000) * 1000000;
+			nanosleep(&sleep_ts, NULL);
+		}
 	}
 }
 

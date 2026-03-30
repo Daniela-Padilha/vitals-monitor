@@ -27,17 +27,4 @@ void display_init(void);
 void display_update(t_display_data *data);
 void display_destroy(void);
 
-// printf("\033[%d;%dH", row, col);
-
-// ╔══════════════════════════════╗
-// ║      ft_vitals monitor       ║
-// ╠══════════════════════════════╣
-// ║  Heart Rate:    72 BPM       ║
-// ║  SpO2:          98 %         ║
-// ║  Temperature:   36.5 °C      ║
-// ║  Humidity:      55 %         ║
-// ╠══════════════════════════════╣
-// ║  Status:        OK           ║
-// ╚══════════════════════════════╝
-
 #endif

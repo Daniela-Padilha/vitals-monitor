@@ -1,4 +1,5 @@
 #include "../inc/logger.h"
+#include "../inc/display.h"
 
 int		logger_init(t_logger *logger, const char *filepath)
 {
@@ -13,6 +14,25 @@ int		logger_init(t_logger *logger, const char *filepath)
 	}
 	fprintf(logger->file, "timestamp_ms,sensor,value,unit,anomaly\n");
 	return (0);
+}
+
+static char *anomaly_to_string(t_anomaly_type type)
+{
+	switch (type)
+	{
+	case ANOMALY_BRADYCARDIA:
+		return ("BRADYCARDIA");
+	case ANOMALY_TACHYCARDIA:
+		return ("TACHYCARDIA");
+	case ANOMALY_HYPOXIA:
+		return ("HYPOXIA");
+	case ANOMALY_HYPERTHERMIA:
+		return ("HYPERTHERMIA");
+	case ANOMALY_HYPOTHERMIA:
+		return ("HYPOTHERMIA");
+	default:
+		return ("NONE");
+	}
 }
 
 int		logger_write(t_logger *logger, t_reading *reading, t_anomaly_type anomaly)
@@ -34,13 +54,13 @@ int		logger_write(t_logger *logger, t_reading *reading, t_anomaly_type anomaly)
 	strftime(time_buf, sizeof(time_buf), "%Y-%m-%dT%H:%M:%S", tm_info);
 	/* write timestamp + reading data into log file */
 	sensor_name = (reading->sensor == SENSOR_MAX30102) ? "MAX30102" : "SHT31";
-	fprintf(logger->file, "%s.%03ldZ,%d,%f,%s,%d\n",
+	fprintf(logger->file, "%s.%03ldZ,%s,%f,%s,%s\n",
 		time_buf,
 		ts.tv_nsec / 1000000,
 		sensor_name,
 		reading->value,
 		reading->unit,
-		anomaly);
+		anomaly_to_string(anomaly));
 	return (0);
 }
 
